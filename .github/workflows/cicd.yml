@@ -32,14 +32,20 @@ jobs:
       - name: Install frontend deps
         run: |
           cd frontend
-          npm install
+          npm ci
 
       - name: Backend lint/test
         run: |
           cd backend
           npm test || echo "no tests"
 
-      - name: Frontend lint/test
+      - name: Frontend unit tests (headless)
         run: |
           cd frontend
-          npm test || echo "no tests"
+          npm run test:ci
+
+      - name: Frontend build
+        run: |
+          cd frontend
+          npm run build -- --configuration production
+
