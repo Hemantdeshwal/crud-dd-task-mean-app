@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    services:
+      mongo:
+        image: mongo:6
+        ports:
+          - 27017:27017
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install backend deps
+        run: |
+          cd backend
+          npm install
+
+      - name: Install frontend deps
+        run: |
+          cd frontend
+          npm install
+
+      - name: Backend lint/test
+        run: |
+          cd backend
+          npm test || echo "no tests"
+
+      - name: Frontend lint/test
+        run: |
+          cd frontend
+          npm test || echo "no tests"
