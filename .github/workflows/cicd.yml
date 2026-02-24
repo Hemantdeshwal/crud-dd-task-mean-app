@@ -32,7 +32,7 @@ jobs:
       - name: Install frontend deps
         run: |
           cd frontend
-          npm ci
+          npm install
 
       - name: Backend lint/test
         run: |
