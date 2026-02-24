@@ -25,3 +25,15 @@ Run `ng serve --port 8081`
 You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
 
 Navigate to `http://localhost:8081/`
+
+### Run with Docker
+
+# From repo root
+docker-compose up -d --build
+
+Backend: http://localhost:8080
+Frontend: http://localhost:8081
+
+Environment:
+- MONGODB_URL is set in docker-compose.yml and used by backend/app/config/db.config.js
+
