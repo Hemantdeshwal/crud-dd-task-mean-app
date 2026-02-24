@@ -28,7 +28,8 @@ Navigate to `http://localhost:8081/`
 
 ### Run with Docker
 
-# From repo root
+From repo root
+
 docker-compose up -d --build
 
 Backend: http://localhost:8080
