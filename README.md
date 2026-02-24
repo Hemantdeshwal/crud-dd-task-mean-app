@@ -73,6 +73,9 @@ See it in Tutorials list.
 
 Edit, publish/unpublish, and delete.
 
+<img width="1898" height="840" alt="image" src="https://github.com/user-attachments/assets/830b3929-3d29-4293-8da4-ce4a4f36279e" />
+
+
 2. Run with Docker (Local or VM)
 From repo root:
 
